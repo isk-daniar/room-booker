@@ -32,7 +32,7 @@ class RoomSchema(BaseModel):
     cost: float
     employed: bool = Field(default=False)
     number_beds: int
-
+    hotel_id: int
 
 
     class Config:
@@ -41,7 +41,7 @@ class RoomSchema(BaseModel):
     def __eq__(self, other):
         if not isinstance(other, type(self)):
             return False
-        for attr in ["room_number", "floor", "cost", "employed", "number_beds"]:
+        for attr in ["room_number", "floor", "cost", "employed", "number_beds", "hotel_id"]:
             if getattr(self, attr) != getattr(other, attr):
                 return False
         return True
