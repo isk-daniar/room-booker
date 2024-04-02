@@ -4,11 +4,9 @@ from pydantic import BaseModel, Field
 
 class HotelSchema(BaseModel):
     id: Optional[int] = Field(default=1)
-    name: str
-    location: str
-    rating: float
-
-
+    name: str = Field(default="HotelMelion")
+    location: str = Field(default="Moscow")
+    rating: float = Field(default=4.5)
 
     class Config:
         from_attributes = True
@@ -33,7 +31,6 @@ class RoomSchema(BaseModel):
     employed: bool = Field(default=False)
     number_beds: int
     hotel_id: int
-
 
     class Config:
         from_attributes = True

@@ -10,7 +10,7 @@ class Hotels(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[Optional[str]] = mapped_column(String(200), nullable=True)
     location: Mapped[str] = mapped_column(String(200), nullable=True)
-    rating: Mapped[float] = mapped_column(Numeric(2, 1), nullable=True)
+    rating: Mapped[float] = mapped_column(nullable=True)
 
 
 class Rooms(Base):

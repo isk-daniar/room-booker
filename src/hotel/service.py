@@ -37,7 +37,6 @@ class HotelsService:
         hotel_dict = hotel.to_dict_wo_id()
         HotelsRepository.update(hotel_id, hotel_dict)
 
-
     @classmethod
     def delete(cls, hotel_id: int):
         HotelsRepository.delete(hotel_id)
